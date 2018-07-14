@@ -1,7 +1,8 @@
 ## Welcome To Packstack - Post Install Script ##
 
 
-	The intension to create this script is like, after creating an Packstack/Director based environment, post like to create Network/Launch instance. 
+	The intension to create this script is like, after creating an Packstack/Director based environment, 
+	post like to create Network/Launch instance. 
 	This script will help you to automate the things. 
 
 ## Things need to keep in mind. ###
