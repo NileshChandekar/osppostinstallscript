@@ -18,4 +18,18 @@
 #
 
 
-sudo ./6.wipe.sh
+source /root/keystonerc_admin
+
+neutron net-list
+openstack image list
+openstack flavor list 
+
+
+echo "Are you sure you want to wipe out all port configuration?"
+select yn in "Yes" "No"
+case $yn in
+    Yes ) sudo ./6.wipe.sh;;
+    No ) exit;;
+esac
+
+#sudo ./6.wipe.sh
