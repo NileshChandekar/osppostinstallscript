@@ -38,10 +38,12 @@ $ cd osppostinstallscript
 
 Uninstallation  Step
 -----------------
+```bash
 # ./6.wipe.sh 
+```
 
-
-# Things need to keep in mind.
+Things need to keep in mind.
+-----------------
 
 	Private IP range  -  10.10.10.0/24
 	Public (provider IP) - 192.168.122.0/24
