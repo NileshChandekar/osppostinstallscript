@@ -1,1 +1,1 @@
-sudo ./6.wipe.sh/
+sudo ./6.wipe.sh
