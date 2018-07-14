@@ -43,7 +43,7 @@ openstack flavor list
 
 
 while true; do
-    read -p "Do you wish to install this program?" yn
+    read -p "Do you want to wipe out all your post configuration???" yn
     case $yn in
         [Yy]* ) sudo ./6.wipe.sh;;
         [Nn]* ) exit;;
