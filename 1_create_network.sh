@@ -17,6 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+source /root/keystonerc_admin
  
 echo "=============================================="
 echo "##### CREATE PRIVATE NETWORK WITH SUBNET #####"

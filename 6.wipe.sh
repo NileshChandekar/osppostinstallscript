@@ -19,7 +19,7 @@
 
 ### Wipe.sh ###
 
-
+source /root/keystonerc_admin
 clear
 echo "##### THIS WILL WIPE OUT ALL NOVA/GALCE/NETWORK CONFIGURATION #####"
 sleep 3
