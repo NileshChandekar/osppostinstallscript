@@ -5,6 +5,14 @@
 ## Warning For RHOSP - 11 and 12 , 
 	
 	Please do change source file as per your envirnment.
+	~~~
+	source keystonerc_admin
+	~~~
+	OR
+	~~~
+	source /home/stack/overcloudrc
+	~~~
+
 
 	Uncomment below lines
 	~~~
