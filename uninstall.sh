@@ -17,19 +17,37 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-
 source /root/keystonerc_admin
 
+
+echo "============================================="
+echo "##### Current Network #####"
+echo "============================================="
 neutron net-list
+
+echo "============================================="
+echo "##### Current Instance #####"
+echo "============================================="
+nova list
+
+echo "============================================="
+echo "##### Current Images #####"
+echo "============================================="
 openstack image list
+
+echo "============================================="
+echo "##### Current Flavor #####"
+echo "============================================="
 openstack flavor list 
 
 
-echo "Are you sure you want to wipe out all port configuration?"
-select yn in "Yes" "No"
-case $yn in
-    Yes ) sudo ./6.wipe.sh;;
-    No ) exit;;
-esac
 
-#sudo ./6.wipe.sh
+while true; do
+    read -p "Do you wish to install this program?" yn
+    case $yn in
+        [Yy]* ) sudo ./6.wipe.sh;;
+        [Nn]* ) exit;;
+        
+    esac
+done
+
