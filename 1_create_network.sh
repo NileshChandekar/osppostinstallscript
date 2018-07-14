@@ -1,0 +1,62 @@
+clear 
+echo "=============================================="
+echo "##### CREATE PRIVATE NETWORK WITH SUBNET #####"
+echo "==============================================" 
+openstack network create private ; sleep 3
+
+
+echo "=============================================="
+echo "##### CREATE SUBNET FOR PRIVATE NETWORK #####"
+echo "=============================================="
+neutron subnet-create --name subpriv private 10.10.10.0/24 ; sleep 3
+
+
+echo "=============================================="
+echo "##### LIST THE PRIVATE SUBNET  #####"
+echo "=============================================="
+neutron subnet-list ; sleep 3 
+
+
+echo "=============================================="
+echo "##### CREATE ROUTER AND ADD INTERFACE  #####"
+echo "=============================================="
+neutron router-create router1 ; sleep 3
+
+echo "================================================"
+echo "##### ADD PRIVATE INTERFACE TO THE ROUTER  #####"
+echo "================================================"
+neutron router-interface-add router1 subpriv ; sleep 3
+
+echo "=============================================="
+echo "##### CREATE PUBLIC NETWORK WITH SUBNET #####"
+echo "=============================================="
+#a=$(grep bridge_mappings= /etc/neutron/plugins/ml2/openvswitch_agent.ini|cut -f2 -d "="|cut -f1 -d ":")
+#neutron net-create public --router:external --provider:network_type flat --provider:physical_network $a ; sleep 3
+openstack network create public ; sleep 3
+
+echo "=============================================="
+echo "##### CREATE SUBNET FOR PUBLIC NETWORK #####"
+echo "=============================================="
+neutron subnet-create --name subpub public 192.168.122.0/24 --enable-dhcp --allocation-pool start=192.168.122.151,end=192.168.122.160 ; sleep 3
+
+echo "=============================================="
+echo "##### ADD PUBLIC INTERFACE TO ROUTER  #####"
+echo "=============================================="
+neutron net-update --router:external=true public ; sleep 3
+
+echo "=============================================="
+echo "##### SHOW PUBLIC NETWORK #####"
+echo "=============================================="
+neutron net-show public ; sleep 3
+
+echo "=============================================="
+echo "##### SET GATEWAY FOR PULIC NETWORK  #####"
+echo "=============================================="
+neutron router-gateway-set router1 public ; sleep 3
+
+echo "========================"
+echo "##### SHOW NETWORK #####"
+echo "========================"
+neutron net-list
+
+
