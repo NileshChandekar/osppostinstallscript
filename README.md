@@ -31,7 +31,7 @@ Installation steps
 ##### AIO (Automate)
 
 ```bash
-$ git clone git@github.com:NileshChandekar/osppostinstallscript.git
+$ git clone https://github.com/NileshChandekar/osppostinstallscript.git
 $ cd osppostinstallscript
 # ./0_autoinstall.sh
 ```
