@@ -20,7 +20,6 @@
 ### Wipe.sh ###
 
 
-source /home/stack/overcloudrc
 clear
 echo "##### THIS WILL WIPE OUT ALL NOVA/GALCE/NETWORK CONFIGURATION #####"
 sleep 3
