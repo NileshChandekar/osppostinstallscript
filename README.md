@@ -39,7 +39,7 @@ $ cd osppostinstallscript
 Uninstallation  Step
 -----------------
 ```bash
-# ./6.wipe.sh 
+# ./uninstall.sh 
 ```
 
 Things need to keep in mind.
