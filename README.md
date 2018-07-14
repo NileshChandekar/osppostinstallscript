@@ -1,5 +1,13 @@
-## Welcome To Packstack - Post Install Script ##
+## Openstack Post Install Script (RHOSP & RDO) ##
 
+	This will automatically create :- 
+
+	* Network 
+	* Image
+	* Flavor
+	* Launch Instace
+	* Attach Flaoting IP
+	* Wipe Out. 
 
 	The intension to create this script is like, after creating an Packstack/Director based environment, 
 	post like to create Network/Launch instance. 
