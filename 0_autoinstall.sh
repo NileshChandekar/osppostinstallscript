@@ -18,6 +18,26 @@
 #
 
 
+#!/bin/bash
+
+if test -f /root/keystonerc_admin ; then
+
+source /root/keystonerc_admin
+echo "sourcing /root/keystonerc_admin"
+
+elif test -f /home/stack/overcloudrc ; then
+
+source /home/stack/overcloudrc
+echo "sourcing /home/stack/overcloudrc"
+
+else
+
+echo "I can't find your openstack environment file."
+
+fi
+
+
+
 sudo ./1_create_network.sh
 sudo ./2_download_image.sh
 sudo ./3_create-flavor.sh
