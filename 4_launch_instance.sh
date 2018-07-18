@@ -45,3 +45,12 @@ GLANCE=$(glance image-list | grep -i 'cirros' | awk '{print $2}')
 FLAVOR=$(nova flavor-list | grep -i 'tiny' | awk '{print $2}')
 date=$(date +"%Y-%m-%d_%H-%M-%S")
 
+
+echo "##### LAUNCH AN CIRROS INSTANCE #####"
+echo "====================================="
+nova boot --flavor $FLAVOR --image $GLANCE --nic net-id=$NET  --security-groups default cirros_$date ; sleep 15 
+clear
+echo "==================================="
+echo "##### CIRROS INSTANCE CREATED #####"
+echo "==================================="
+nova list 
