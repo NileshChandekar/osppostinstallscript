@@ -73,7 +73,7 @@ neutron net-create public --router:external --provider:network_type flat --provi
 echo "=============================================="
 echo "##### CREATE SUBNET FOR PUBLIC NETWORK #####"
 echo "=============================================="
-neutron subnet-create --name subpub public 192.168.122.0/24 --enable-dhcp --allocation-pool start=192.168.122.151,end=192.168.122.160 ; sleep 3
+neutron subnet-create --name subpub public 192.168.100.0/24 --enable-dhcp --allocation-pool start=192.168.100.151,end=192.168.100.160 ; sleep 3
 
 echo "=============================================="
 echo "##### ADD PUBLIC INTERFACE TO ROUTER  #####"
