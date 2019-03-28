@@ -48,7 +48,7 @@ x=$(date +"%Y-%m-%d_%H-%M-%S")
 
 echo "##### LAUNCH AN CIRROS INSTANCE #####"
 echo "====================================="
-nova boot --flavor $FLAVOR --image $GLANCE --nic net-id=$NET  --security-groups default cirros_$x ; sleep 15 
+nova boot --flavor $FLAVOR --image $GLANCE --nic net-id=$NET --security-groups default cirros_$x --poll; sleep 15 
 clear
 echo "==================================="
 echo "##### CIRROS INSTANCE CREATED #####"
