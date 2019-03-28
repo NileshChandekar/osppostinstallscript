@@ -67,8 +67,8 @@ echo "=============================================="
 echo "##### CREATE PUBLIC NETWORK WITH SUBNET #####"
 echo "=============================================="
 #a=$(grep bridge_mappings= /etc/neutron/plugins/ml2/openvswitch_agent.ini|cut -f2 -d "="|cut -f1 -d ":")
-#neutron net-create public --router:external --provider:network_type flat --provider:physical_network $a ; sleep 3
-openstack network create public ; sleep 3
+neutron net-create public --router:external --provider:network_type flat --provider:physical_network datacentre ; sleep 3
+#openstack network create public ; sleep 3
 
 echo "=============================================="
 echo "##### CREATE SUBNET FOR PUBLIC NETWORK #####"
